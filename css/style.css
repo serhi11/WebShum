@@ -16,7 +16,6 @@ html, body {
 	height: 100%;
 	background: url(../img/main-bg.jpg) no-repeat center fixed;
 	background-size: cover;
-	padding: 50px;
 }
 
 #home {
@@ -30,7 +29,10 @@ html, body {
 }
 
 /* --------------------------- HEADER ------------------------------- */
-#header {text-align: center;}
+#header {
+	text-align: center;
+	margin-top: auto;
+}
 
 .logo {
 	color: #ababab;
@@ -61,7 +63,11 @@ html, body {
 /* --------------------------- // NAV ------------------------------- */
 
 /* --------------------------- FOOTER ------------------------------- */
-#footer {margin-top: 50px;}
+#footer {
+	width: 100%;
+	padding: 20px;
+	margin-top: auto;
+}
 
 .social-list li {
 	display: inline-block;
