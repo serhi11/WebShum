@@ -1,3 +1,75 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Bold.eot');
+    src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/Lato-Bold.woff') format('woff'),
+        url('../fonts/Lato-Bold.ttf') format('truetype'),
+        url('../fonts/Lato-Bold.svg#Lato-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Light.eot');
+    src: url('../fonts/Lato-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lato-Light.woff2') format('woff2'),
+        url('../fonts/Lato-Light.woff') format('woff'),
+        url('../fonts/Lato-Light.ttf') format('truetype'),
+        url('../fonts/Lato-Light.svg#Lato-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.eot');
+    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/Lato-Regular.woff') format('woff'),
+        url('../fonts/Lato-Regular.ttf') format('truetype'),
+        url('../fonts/Lato-Regular.svg#Lato-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Black.eot');
+    src: url('../fonts/Lato-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lato-Black.woff2') format('woff2'),
+        url('../fonts/Lato-Black.woff') format('woff'),
+        url('../fonts/Lato-Black.ttf') format('truetype'),
+        url('../fonts/Lato-Black.svg#Lato-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url('../fonts/OpenSansCondensed-Bold.eot');
+    src: url('../fonts/OpenSansCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSansCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/OpenSansCondensed-Bold.woff') format('woff'),
+        url('../fonts/OpenSansCondensed-Bold.ttf') format('truetype'),
+        url('../fonts/OpenSansCondensed-Bold.svg#OpenSansCondensed-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    src: url('../fonts/OpenSansCondensed-Light.eot');
+    src: url('../fonts/OpenSansCondensed-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSansCondensed-Light.woff2') format('woff2'),
+        url('../fonts/OpenSansCondensed-Light.woff') format('woff'),
+        url('../fonts/OpenSansCondensed-Light.ttf') format('truetype'),
+        url('../fonts/OpenSansCondensed-Light.svg#OpenSansCondensed-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -10,6 +82,10 @@
 
 html, body {
 	height: 100%;
+}
+
+body {
+	font: 16px/20px 'Open Sans Condensed', sans-serif;
 }
 
 .main-wrap {
@@ -35,19 +111,24 @@ html, body {
 }
 
 .logo {
-	color: #ababab;
+	color: #dcdcdc;
     font-size: 50px;
-    text-transform: uppercase;
     text-decoration: none;
-    font-weight: bold;
     display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+
+    animation: trans-logo 5s ease;
 }
 
 .slogan {
+	margin-top: 10px;
 	text-transform: uppercase;
 	color: #ababab;
 	font-size: 20px;
+	font-weight: normal;
 	margin-bottom: 50px;
+	letter-spacing: 2px;
 }
 /* --------------------------- // HEADER ------------------------------- */
 
@@ -56,9 +137,15 @@ html, body {
 	text-align: center;
 }
 #nav a {
+	display: block;
+	padding: 5px 0;
 	color: #888;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 20px;
+	transition: color 0.3s ease;
+}
+#nav a:hover {
+	color: #fff;
 }
 /* --------------------------- // NAV ------------------------------- */
 
@@ -72,8 +159,41 @@ html, body {
 .social-list li {
 	display: inline-block;
 }
+.social-list li + li {margin-left: 5px;}
 .social-list a {
 	color: #888;
 	text-decoration: none;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+}
+.social-list a.vk {
+	background: url(../img/ic-vk.png) no-repeat center;
+	background-size: 25px;
+}
+.social-list a.fb {
+	background: url(../img/ic-fb.png) no-repeat center;
+	background-size: 25px;
+}
+.social-list a.yout {
+	background: url(../img/ic-yout.png) no-repeat center;
+	background-size: 25px;
+}
+.social-list a.git {
+	background: url(../img/ic-git.png) no-repeat center;
+	background-size: 25px;
 }
 /* --------------------------- // FOOTER ------------------------------- */
+
+/* --------------------------- ANIMATION ------------------------------- */
+@keyframes trans-logo {
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 50px rgba(255,255,255,.9);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: none;
+	}
+}
+/* --------------------------- // ANIMATION ------------------------------- */
